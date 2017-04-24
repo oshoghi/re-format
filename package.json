@@ -1,10 +1,10 @@
 {
   "name": "re-format",
-  "version": "1.1.0",
+  "version": "1.1.5",
   "description": "A fast string formatting library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,25 @@
   ],
   "author": "Okhtay Shoghi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oshoghi/re-format/issues"
+  "jest": {
+    "rootDir": "./",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "testDirectoryName": "tests",
+    "testFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "/node/",
+      "/node_modules/"
+    ]
   },
-  "homepage": "https://github.com/oshoghi/re-format#readme"
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-core": "6.4.0",
+    "jest-cli": "12.x"
+  }
 }
