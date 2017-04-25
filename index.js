@@ -1,18 +1,30 @@
 var Matchers = {
     SINGLE_CURLY: {
         regex: /(\{[^}]*\})/,
-        isKey: (str) => str[0] === "{" && str[str.length - 1] === "}",
-        getKey: (str) => str.substring(1, str.length - 1)
+        isKey: function (str) {
+            return str[0] === "{" && str[str.length - 1] === "}";
+        },
+        getKey: function (str) {
+            return str.substring(1, str.length - 1);
+        }
     },
     DOUBLE_CURLY: {
         regex: /(\{\{[^}]*\}\})/,
-        isKey: (str) => str[0] === "{" && str[1] === "{" && str[str.length - 2] === "}" && str[str.length - 1] === "}",
-        getKey: (str) => str.substring(2, str.length - 2)
+        isKey: function (str) {
+            return str[0] === "{" && str[1] === "{" && str[str.length - 2] === "}" && str[str.length - 1] === "}";
+        },
+        getKey: function (str) {
+            return str.substring(2, str.length - 2);
+        }
     },
     COLON: {
         regex: /(:[^ :]*\b)/,
-        isKey: (str) => str[0] === ":" && str[1] !== " ",
-        getKey: (str) => str.slice(1)
+        isKey: function (str) {
+            return str[0] === ":" && str[1] !== " ";
+        },
+        getKey: function (str) {
+            return  str.slice(1);
+        }
     }
 };
 
